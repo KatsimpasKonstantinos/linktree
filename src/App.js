@@ -1,44 +1,51 @@
-import { useEffect } from 'react';
 import './App.css';
+import Link from './Links';
+import React, { useState } from 'react';
+
+import profilePic from './konstantinos.jpg';
+
+import imageLinkedIn from './logos/linkedIn.png';
+import imageTelekom from './logos/telekom.png';
+import imageGmail from './logos/gmail.png';
 
 function App() {
 
-  useEffect(() => {
-    rain();
-  }, []);
+  const [theme, setTheme] = useState('default'); // Initialize with a default theme
 
-  var rainDensity = 1;
-  var duration = 1;
+  const changeTheme = () => {
+    // Define an array of available themes
+    const themes = ['default', 'theme1', 'theme2', 'theme3',];
 
-  function rain() {
-    var rainDiv = document.getElementById("rain");
-    for (var i = 0; i < 100; i += (Math.random() / rainDensity) * (1500 / window.innerWidth)) {
-      var span = '<div class="raindrop" style="left:' + i * 1 + '%;animation-delay: ' + Math.random() + 's;' +
-        'animation-duration: ' + (Math.random() * 2 + 0.5) * duration + 's; bottom: ' + (100) + '%;"></div>';
-      if (rainDiv) rainDiv.innerHTML += span;
-    }
-  }
+    // Find the index of the current theme in the array
+    const currentIndex = themes.indexOf(theme);
+
+    // Calculate the index of the next theme
+    const nextIndex = (currentIndex + 1) % themes.length;
+
+    // Set the next theme
+    setTheme(themes[nextIndex]);
+  };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Hello World!
-        </p>
-        <a
-          className="App-link"
-          href="https://www.linkedin.com/in/konstantinos-katsimpas-48ba92242/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>
-      </header>
-      <div id="rain"></div>
+    <div className={`app ${theme}`}>
+      <br />
+      <br />
+      <div className="profile-container">
+        <img
+          src={profilePic}
+          alt="Profile"
+          className={`profile-picture ${theme}Child`}
+        />
+      </div>
+      <h1>Konstantinos Katsimpas</h1>
+      <Link name={"LinkedIn"} link={"https://www.linkedin.com/in/konstantinos-katsimpas-48ba92242/"} logo={imageLinkedIn} theme={theme} />
+      <Link name={"Telekom Mail"} link={"mailto:konstantinos.katsimpas@telekom.de"} logo={imageTelekom} theme={theme} />
+      <Link name={"Personal Mail"} link={"mailto:konstantinoskatsimpas02@gmail.com"} logo={imageGmail} theme={theme} />
+      
+      <button onClick={changeTheme} className={`button ${theme}Child`}>Change Theme</button>
+
     </div>
   );
 }
-
-
 
 export default App;

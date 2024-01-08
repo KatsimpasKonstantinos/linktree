@@ -1,0 +1,52 @@
+.Link {
+    border-radius: 20px;
+    margin-bottom: 20px;
+    width: 30vmax;
+    padding: 1vmin;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+.Text {
+    text-decoration: none;
+    font-size: calc(10px + 2vmax);
+    float: left;
+    margin: 0px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.Logo {
+    height: 4vmax;
+    pointer-events: none;
+    float: right;
+}
+
+.defaultChild {
+    background-color: #9D44C0;
+    color: #ebbfd9;
+}
+
+.theme1Child {
+    background-color: #302B27;
+    color: #F5F3F5;
+}
+
+.theme2Child {
+    background-color: #5762D5;
+    color: #32292F;
+}
+
+.theme3Child {
+    background-color: #BCA37F;
+    color: #113946;
+}
+
+.theme4Child {
+    background-color: #7D7C7C;
+    color: #F1EFEF;
+}

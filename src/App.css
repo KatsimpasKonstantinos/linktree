@@ -1,69 +1,61 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: top;
   font-size: calc(10px + 2vmin);
-  color: white;
+  transition: background-color 0.5s ease;
 }
 
-.App-link {
-  color: #0077B5;
+.button {
+  padding: 10px 20px; /* Padding */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.5s ease; /* Smooth hover transition */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.profile-container {
+  width: 150px; /* Adjust the width and height as needed */
+  height: 150px;
+  border: 3px solid; 
+  border-radius: 50%; /* Makes it circular */
+  overflow: hidden; /* Hides overflow if the image is larger than the container */
 }
 
-.raindrop {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(81, 137, 200));
-  width: 1px;
-  height: 6vh;
-  z-index: 3;
-  position: absolute;
-  animation: drop 1s ease-in infinite;
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the circular container */
 }
 
+.default {
+  background: linear-gradient(0.52turn, #0E21A0, #EC53B0);
+  color: #ebbfd9;
+  transition: background-color 0.5s ease;
+}
 
-@keyframes drop {
-  0% {
-    transform: translateY(-10vh);
-    opacity: 0;
-  }
+.theme1 {
+  background: linear-gradient(0.52turn, #274690, #1B264F);
+  color: #F5F3F5;
+  transition: background-color 0.5s ease;
+}
 
-  5% {
-    opacity: 1;
-  }
+.theme2 {
+  background: linear-gradient(0.52turn, #D1E3DD, #6E7DAB);
+  color: #32292F;
+  transition: background-color 0.5s ease;
+}
 
-  95% {
-    opacity: 1;
-  }
+.theme3 {
+  background: linear-gradient(0.52turn, #FFF2D8, #EAD7BB);
+  color: #113946;
+  transition: background-color 0.5s ease;
+}
 
-  100% {
-    transform: translateY(100vh);
-    opacity: 0;
-  }
+.theme4 {
+  background: linear-gradient(0.52turn, #CCC8AA, #191717);
+  color: #F1EFEF;
+  transition: background-color 0.5s ease;
 }
